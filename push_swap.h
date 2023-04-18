@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:45 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/15 23:12:00 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/04/19 00:18:02 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include<stdlib.h>
 # include<unistd.h>
 # include<stddef.h>
-# include<stdio.h>	//testing
+# include<stdio.h>
 
 typedef struct linked_list
 {
@@ -27,6 +27,10 @@ typedef struct linked_list
 	int					index;
 	struct linked_list	*next;
 }	t_stack;
+
+//argv_processing_mac.c
+int		ft_isspace(char *str);
+char	*ft_strcat_spc(char *dest, char *src);
 
 // algorithm.c
 void	sort3(t_stack **top, void (*rot)(t_stack**, t_stack**),
@@ -122,5 +126,10 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 int		ft_maxima(int x, int y);
 int		ft_minima(int x, int y);
+
+//ft_split.c
+char	**ft_split(char const *s, char c);
+int		word_count(char *str, char c);
+// + 3 static functions
 
 #endif

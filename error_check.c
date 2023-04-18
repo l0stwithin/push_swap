@@ -6,11 +6,9 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:15 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/18 18:53:15 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/04/19 00:05:59 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "push_swap.h"
 
 #include "push_swap.h"
 
@@ -42,7 +40,7 @@ static int	ft_isnum(char *str)
 	int	i;
 
 	i = 0;
-	if (str[i] == '-')
+	if (str[i] == '-' && ft_isdigit(str[i + 1]))
 		i++;
 	while (str[i] != '\0')
 	{

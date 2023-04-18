@@ -6,7 +6,7 @@
 #    By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 23:53:30 by akaraban          #+#    #+#              #
-#    Updated: 2023/04/16 06:02:27 by akaraban         ###   ########.fr        #
+#    Updated: 2023/04/18 23:48:18 by akaraban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,9 @@ SOURCES =	algorithm.c \
 			stack_utilities.c \
 			stack_utilities2.c \
 			utilities.c \
-			utilities2.c
+			utilities2.c \
+			argv_processing_mac.c \
+			ft_split.c
 			
 OBJECTS = ${SOURCES:.c=.o}
 
