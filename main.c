@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:37 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/15 23:50:14 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/04/18 19:05:20 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,6 @@ int	main(int argc, char **argv)
 		return (0);
 	*b = NULL;
 	sort_stack(a, b, argc - 1);
-	write(1, "stack_a\n", 8);
-	 while (*a)            //test loop                        
-    {
-        printf("%d\t", (*a)->value);
-        printf("%d\n", (*a)->index);
-        *a = (*a)->next;
-    }
 	free_stack(a);
 	free_stack(b);
 	return (0);

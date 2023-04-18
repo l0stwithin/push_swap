@@ -6,9 +6,11 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:15 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/15 00:39:16 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/04/18 18:53:15 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 #include "push_swap.h"
 

@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:38:53 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/15 23:28:14 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/04/18 18:51:47 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,13 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b, int size)
 	t_stack	*elem;
 
 	elem = NULL;
-	if (size == 3)
+	if (size == 1 || is_sorted(stack_a))
+		return ;
+	else if (size == 2 && (*stack_a)->index == 1)
+		apply_operation(stack_a, stack_b, &sa);
+	else if (size == 3)
 		sort_3elem(stack_a, stack_b, 0);
-	else
+	else if (size > 3)
 		presort_nelem(stack_a, stack_b, size);
 	if (!is_sorted(stack_a))
 	{
