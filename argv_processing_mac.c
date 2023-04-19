@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 02:02:34 by sdutta            #+#    #+#             */
-/*   Updated: 2023/04/19 02:15:42 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/20 02:00:22 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	ft_isspace(char *str)
 	while (str[i] != '\0')
 	{
 		if (str[i] == ' ')
-			return (1);
+			return (TRUE);
 		i++;
 	}
-	return (0);
+	return (FALSE);
 }
 
 char	*ft_strcat_spc(char *dest, char *src)
@@ -45,4 +45,17 @@ char	*ft_strcat_spc(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
+}
+
+void	ft_free(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }

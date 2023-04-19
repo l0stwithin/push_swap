@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:15 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/19 00:05:59 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/04/20 02:06:31 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,36 +58,39 @@ static int	out_of_range(char *num)
 	return (FALSE);
 }
 
-void	display_error(void)
+void	display_message(char *msg)
 {
 	int		fd;
-	char	*error_message;
 
-	fd = 1;
-	error_message = "Error";
-	ft_putendl_fd(error_message, fd);
+	fd = 2;
+	ft_putendl_fd(msg, fd);
 }
 
 int	error_check(int count, char **strs)
 {
-	int	i;
+	int		i;
+	int		mac_case;
+	char	*str;
 
-	i = 1;
+	i = count;
+	mac_case = 0;
 	if (count < 2)
 		return (-1);
+	if (ft_isspace(strs[1]) && count == 2)
+	{
+		str = ft_strcat_spc(strs[0], strs[1]);
+		strs = ft_split(str, ' ');
+		i = word_count(str, ' ');
+	}
 	if (duplicate_val(count, strs))
+		mac_case = 1;
+	while (i > 1)
 	{
-		display_error();
-		return (TRUE);
+		if (!ft_isnum(strs[i - 1]) || out_of_range(strs[i - 1]))
+			mac_case = 1;
+		i--;
 	}
-	while (i < count)
-	{
-		if (!ft_isnum(strs[i]) || out_of_range(strs[i]))
-		{
-			display_error();
-			return (TRUE);
-		}
-		i++;
-	}
-	return (FALSE);
+	if (count == 2)
+		ft_free(strs);
+	return (mac_case);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:45 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/19 00:18:02 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/04/20 00:48:41 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct linked_list
 //argv_processing_mac.c
 int		ft_isspace(char *str);
 char	*ft_strcat_spc(char *dest, char *src);
+void	ft_free(char **strs);
 
 // algorithm.c
 void	sort3(t_stack **top, void (*rot)(t_stack**, t_stack**),
@@ -78,6 +79,7 @@ void	ss(t_stack **stack_a, t_stack **stack_b);
 // error_check.c
 void	display_error(void);
 int		error_check(int count, char **strs);
+void	display_message(char *msg);
 // + 3 static functions
 
 //indices.c
