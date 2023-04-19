@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:45 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/20 00:48:41 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/20 03:14:33 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 void	ss(t_stack **stack_a, t_stack **stack_b);
 
 // error_check.c
-void	display_error(void);
 int		error_check(int count, char **strs);
 void	display_message(char *msg);
 // + 3 static functions

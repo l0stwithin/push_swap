@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:15 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/20 02:06:31 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/20 04:04:41 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ static int	duplicate_val(int count, char **input)
 		while (j < count)
 		{
 			if (!ft_strcmp(cur_num, input[j]))
+			{
+				free(cur_num);
 				return (TRUE);
+			}
 			j++;
 		}
 		free(cur_num);
@@ -82,7 +85,7 @@ int	error_check(int count, char **strs)
 		strs = ft_split(str, ' ');
 		i = word_count(str, ' ');
 	}
-	if (duplicate_val(count, strs))
+	if (duplicate_val(i, strs))
 		mac_case = 1;
 	while (i > 1)
 	{
@@ -90,7 +93,7 @@ int	error_check(int count, char **strs)
 			mac_case = 1;
 		i--;
 	}
-	if (count == 2)
+	if (ft_isspace(str) && count == 2)
 		ft_free(strs);
 	return (mac_case);
 }
