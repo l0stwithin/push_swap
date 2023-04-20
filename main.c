@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:37 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/20 03:14:44 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/20 05:37:31 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	main(int argc, char **argv)
 
 	if (error_check(argc, argv) != 0)
 	{
-		display_message("Error");
+		if (error_check(argc, argv) == 1)
+			display_message("Error");
 		return (0);
 	}
 	a = malloc(sizeof(t_stack *));

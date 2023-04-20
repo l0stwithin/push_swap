@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:15 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/20 04:04:41 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/20 05:45:53 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,29 +71,30 @@ void	display_message(char *msg)
 
 int	error_check(int count, char **strs)
 {
-	int		i;
 	int		mac_case;
 	char	*str;
+	int		mark;
+	int		i;
 
-	i = count;
 	mac_case = 0;
+	i = 1;
+	mark = 0;
 	if (count < 2)
 		return (-1);
 	if (ft_isspace(strs[1]) && count == 2)
 	{
 		str = ft_strcat_spc(strs[0], strs[1]);
 		strs = ft_split(str, ' ');
-		i = word_count(str, ' ');
+		count = word_count(str, ' ');
+		mark = 1;
 	}
-	if (duplicate_val(i, strs))
-		mac_case = 1;
-	while (i > 1)
+	while (i++ < count)
 	{
-		if (!ft_isnum(strs[i - 1]) || out_of_range(strs[i - 1]))
+		if (!ft_isnum(strs[i - 1]) || out_of_range(strs[i - 1])
+			|| duplicate_val(count, strs))
 			mac_case = 1;
-		i--;
 	}
-	if (ft_isspace(str) && count == 2)
+	if (mark)
 		ft_free(strs);
 	return (mac_case);
 }
