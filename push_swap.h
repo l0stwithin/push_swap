@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:45 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/20 03:14:33 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/20 05:56:11 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,10 @@ void	ss(t_stack **stack_a, t_stack **stack_b);
 
 // error_check.c
 int		error_check(int count, char **strs);
+// + 4 static functions
+
+// main.c
 void	display_message(char *msg);
-// + 3 static functions
 
 //indices.c
 void	initialize_indices(t_stack **st);
@@ -110,7 +112,7 @@ void	apply_operation(t_stack **stack_a, t_stack **stack_b,
 t_stack	*get_min(t_stack **stack);
 int		is_min(t_stack **elem, t_stack **stack);
 
-//stack_utilities.c
+//stack_utilities2.c
 int		is_sorted(t_stack **stack);
 void	free_stack(t_stack **stack);
 

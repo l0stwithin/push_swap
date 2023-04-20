@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:15 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/20 05:45:53 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/20 06:11:43 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,20 @@ static int	out_of_range(char *num)
 	return (FALSE);
 }
 
-void	display_message(char *msg)
+static int	making_checks(int c, char **s)
 {
-	int		fd;
+	int	i;
 
-	fd = 2;
-	ft_putendl_fd(msg, fd);
+	i = 1;
+	if (duplicate_val(c, s))
+		return (1);
+	while (i < c)
+	{
+		if (!ft_isnum(s[i]) || out_of_range(s[i]))
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 int	error_check(int count, char **strs)
@@ -74,10 +82,8 @@ int	error_check(int count, char **strs)
 	int		mac_case;
 	char	*str;
 	int		mark;
-	int		i;
 
 	mac_case = 0;
-	i = 1;
 	mark = 0;
 	if (count < 2)
 		return (-1);
@@ -88,12 +94,8 @@ int	error_check(int count, char **strs)
 		count = word_count(str, ' ');
 		mark = 1;
 	}
-	while (i++ < count)
-	{
-		if (!ft_isnum(strs[i - 1]) || out_of_range(strs[i - 1])
-			|| duplicate_val(count, strs))
-			mac_case = 1;
-	}
+	if (making_checks(count, strs))
+		mac_case = 1;
 	if (mark)
 		ft_free(strs);
 	return (mac_case);

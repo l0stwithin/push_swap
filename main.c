@@ -6,20 +6,30 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:37 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/20 05:37:31 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/20 06:10:15 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	display_message(char *msg)
+{
+	int		fd;
+
+	fd = 2;
+	ft_putendl_fd(msg, fd);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack		**a;
 	t_stack		**b;
+	int			err;
 
-	if (error_check(argc, argv) != 0)
+	err = error_check(argc, argv);
+	if (err != 0)
 	{
-		if (error_check(argc, argv) == 1)
+		if (err == 1)
 			display_message("Error");
 		return (0);
 	}
