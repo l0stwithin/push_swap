@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:45 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/20 05:56:11 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/23 04:53:29 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,6 @@ int		ft_isdigit(int c);
 long	ft_atoi(char *nptr);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(char *s);
-int		ft_strcmp(char *s1, char *s2);
 
 //utilities2.c
 void	ft_putchar_fd(char c, int fd);

@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:39:15 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/23 04:35:57 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/23 04:40:58 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,19 @@ static int	duplicate_val(int count, char **input)
 {
 	int		i;
 	int		j;
-	char	*cur_num;
+	int		cur_num;
 
 	i = 1;
 	while (i < count - 1)
 	{
-		cur_num = ft_strdup(input[i]);
-		if (cur_num[i] == '+')
-			i++;
+		cur_num = ft_atoi(input[i]);
 		j = i + 1;
 		while (j < count)
 		{
-			if (!ft_strcmp(cur_num, input[j]))
-			{
-				free(cur_num);
+			if (cur_num == ft_atoi(input[j]))
 				return (TRUE);
-			}
 			j++;
 		}
-		free(cur_num);
 		i++;
 	}
 	return (FALSE);

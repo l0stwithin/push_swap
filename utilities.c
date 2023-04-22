@@ -6,7 +6,7 @@
 /*   By: sdutta <sdutta@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:40:14 by akaraban          #+#    #+#             */
-/*   Updated: 2023/04/23 04:28:23 by sdutta           ###   ########.fr       */
+/*   Updated: 2023/04/23 04:53:17 by sdutta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,4 @@ char	*ft_strdup(char *s)
 	}
 	ptr[i] = '\0';
 	return (ptr);
-}
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	pos;
-
-	pos = 0;
-	while (s1[pos] != 0 && s2[pos] != 0 && s1[pos] == s2[pos])
-	{
-		pos = pos + 1;
-	}
-	return (s1[pos] - s2[pos]);
 }
